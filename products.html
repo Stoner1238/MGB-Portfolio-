@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>All Products | More Grace & Blessing</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Optional inline style to make cart fixed on screen */
+    /* Cart styles */
     .cart {
       position: fixed;
       top: 0;
@@ -45,6 +45,69 @@
     .cart-item input {
       width: 50px;
     }
+
+    /* Popup form styles */
+    #customer-form-popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 10001;
+      justify-content: center;
+      align-items: center;
+    }
+    #customer-form-popup.active {
+      display: flex;
+    }
+    #customer-form {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    #customer-form h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    #customer-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    #customer-form input, #customer-form textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+      resize: vertical;
+    }
+    #customer-form button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #customer-form button:hover {
+      background: #0056b3;
+    }
+    #customer-form .close-btn {
+      background: #ccc;
+      color: #333;
+      margin-top: 10px;
+    }
+    #customer-form .close-btn:hover {
+      background: #999;
+    }
   </style>
 </head>
 <body>
@@ -68,10 +131,17 @@
           <button class="order-btn">Order Now</button>
         </div>
 
-        <div class="product-card" data-name="Big Plastic Basket" data-price="2500">
-          <img src="https://images.unsplash.com/photo-1622094648865-7fa1b0a5c1b6" alt="Big Basket" />
-          <h3>Big Plastic Basket</h3>
-          <p>₦2,500</p>
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
           <button class="order-btn">Order Now</button>
         </div>
 
@@ -89,10 +159,150 @@
           <button class="order-btn">Order Now</button>
         </div>
 
-        <div class="product-card" data-name="Storage Container" data-price="3000">
-          <img src="https://images.unsplash.com/photo-1622094648865-7fa1b0a5c1b6" alt="Container" />
-          <h3>Storage Container</h3>
-          <p>₦3,000</p>
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+
+        <div class="product-card" data-name="Plastic Spoon Set" data-price="1000">
+          <img src="https://images.unsplash.com/photo-1578654014523-87f6fa0f0da3" alt="Plastic Spoon" />
+          <h3>Plastic Spoon Set</h3>
+          <p>₦1,000</p>
           <button class="order-btn">Order Now</button>
         </div>
 
@@ -106,6 +316,7 @@
     </div>
   </section>
 
+  <!-- Cart -->
   <div id="cart" class="cart">
     <h3>Your Cart</h3>
     <div id="cart-items"></div>
@@ -116,6 +327,24 @@
     <button id="close-cart">Close</button>
   </div>
   <button id="open-cart" class="open-cart-btn">Cart (0)</button>
+
+  <!-- Customer info popup -->
+  <div id="customer-form-popup">
+    <form id="customer-form">
+      <h3>Enter Your Details</h3>
+      <label for="cust-name">Full Name *</label>
+      <input type="text" id="cust-name" name="cust-name" required placeholder="Your full name" />
+
+      <label for="cust-phone">Phone Number *</label>
+      <input type="tel" id="cust-phone" name="cust-phone" required placeholder="e.g. +2348012345678" pattern="^\+?\d{10,15}$" />
+
+      <label for="cust-address">Address / Delivery Info</label>
+      <textarea id="cust-address" name="cust-address" rows="3" placeholder="Optional"></textarea>
+
+      <button type="submit">Send Order</button>
+      <button type="button" class="close-btn" id="close-cust-form">Cancel</button>
+    </form>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -131,6 +360,10 @@
     const cartTotalPrice = document.getElementById('cart-total-price');
     const checkoutBtn = document.getElementById('checkout-btn');
 
+    const customerFormPopup = document.getElementById('customer-form-popup');
+    const customerForm = document.getElementById('customer-form');
+    const closeCustFormBtn = document.getElementById('close-cust-form');
+
     let cartItems = [];
 
     function updateCart() {
@@ -143,7 +376,7 @@
         itemDiv.innerHTML = `
           <span class="cart-item-name">${item.name}</span>
           <input type="number" min="1" class="cart-item-qty" value="${item.qty}" data-index="${index}" />
-          <span>₦${item.price * item.qty}</span>
+          <span>₦${(item.price * item.qty).toLocaleString()}</span>
           <button class="cart-item-remove" data-index="${index}">&times;</button>
         `;
         cartItemsContainer.appendChild(itemDiv);
@@ -151,6 +384,7 @@
       cartTotalPrice.textContent = '₦' + total.toLocaleString();
       openCartBtn.textContent = `Cart (${cartItems.reduce((acc, cur) => acc + cur.qty, 0)})`;
 
+      // Quantity change handlers
       document.querySelectorAll('.cart-item-qty').forEach(input => {
         input.addEventListener('change', e => {
           const idx = e.target.dataset.index;
@@ -160,6 +394,8 @@
           updateCart();
         });
       });
+
+      // Remove item handlers
       document.querySelectorAll('.cart-item-remove').forEach(button => {
         button.addEventListener('click', e => {
           const idx = e.target.dataset.index;
@@ -169,6 +405,7 @@
       });
     }
 
+    // Add product to cart
     document.querySelectorAll('.order-btn').forEach(button => {
       button.addEventListener('click', e => {
         const productCard = e.target.closest('.product-card');
@@ -193,20 +430,63 @@
       cart.classList.remove('open');
     });
 
+    // Checkout button: Show customer form if cart not empty
     checkoutBtn.addEventListener('click', () => {
       if (cartItems.length === 0) {
         alert('Your cart is empty!');
         return;
       }
-      let orderText = 'Hello, I would like to order the following products:\n';
-      cartItems.forEach(item => {
-        orderText += `- ${item.name} x${item.qty} = ₦${item.price * item.qty}\n`;
-      });
-      orderText += `Total: ₦${cartItems.reduce((acc, cur) => acc + cur.price * cur.qty, 0)}`;
+      // Show customer info form popup
+      customerFormPopup.classList.add('active');
+    });
 
-      const encodedText = encodeURIComponent(orderText);
-      const whatsappUrl = `https://wa.me/2347082798562?text=${encodedText}`;
+    // Close customer form popup
+    closeCustFormBtn.addEventListener('click', () => {
+      customerFormPopup.classList.remove('active');
+    });
+
+    // Handle customer form submit
+    customerForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = customerForm['cust-name'].value.trim();
+      const phone = customerForm['cust-phone'].value.trim();
+      const address = customerForm['cust-address'].value.trim();
+
+      if (!name || !phone) {
+        alert('Please fill in your name and phone number.');
+        return;
+      }
+
+      // Build order text
+      let orderText = `Hello, I would like to order the following products:\n\n`;
+      cartItems.forEach(item => {
+        orderText += `- ${item.name} x${item.qty} = ₦${(item.price * item.qty).toLocaleString()}\n`;
+      });
+      const total = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
+      orderText += `\nTotal: ₦${total.toLocaleString()}\n\n`;
+
+      orderText += `Customer Details:\nName: ${name}\nPhone: ${phone}\n`;
+      if (address) {
+        orderText += `Address: ${address}\n`;
+      }
+
+      const encodedMessage = encodeURIComponent(orderText);
+      const whatsappNumber = '2348026312854'; // <-- Replace with your WhatsApp number with country code, no + sign
+
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      // Open WhatsApp in new tab
       window.open(whatsappUrl, '_blank');
+
+      // Clear cart and close popup & cart
+      cartItems = [];
+      updateCart();
+      customerFormPopup.classList.remove('active');
+      cart.classList.remove('open');
+
+      // Reset form
+      customerForm.reset();
     });
   </script>
 </body>
